@@ -137,7 +137,7 @@ them.
             @http = nil
             @server = nil
             @logger = get_param(:logger) ||
-                    (Rails.logger if defined?(Rails.logger)) ||
+                    (Rails.logger if defined?(Rails) && defined?(Rails.logger)) ||
                     Logger.new(STDOUT)
         end
 
